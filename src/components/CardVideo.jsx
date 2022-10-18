@@ -1,4 +1,3 @@
-import {useState} from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -7,7 +6,6 @@ import { CardActionArea, createTheme, Link, ThemeProvider } from "@mui/material"
 
 const CardVideo = ({ info }) => {
   const url = "https://www.youtube.com" + info.link;
-  const [shadow, setShadow] = useState(1)
 
   const styles = {
     media: {
