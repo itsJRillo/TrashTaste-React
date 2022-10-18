@@ -1,4 +1,4 @@
-import * as React from "react";
+import {useState} from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
@@ -7,19 +7,23 @@ import { CardActionArea, createTheme, Link, ThemeProvider } from "@mui/material"
 
 const CardVideo = ({ info }) => {
   const url = "https://www.youtube.com" + info.link;
+  const [shadow, setShadow] = useState(1)
 
   const styles = {
     media: {
-      width:369,
-      height:207
+      width:399,
+      height:237
     },
     card: {
       margin: "15px 15px 15px 15px",
       backgroundColor: "#fff",
-      "&:hover":{
+      "& :hover":{
         transform: "scale(1.1)"
       }
     },
+    cardAction:{
+      cursor: "default"
+    }
   };
 
   const theme = createTheme({
@@ -29,19 +33,20 @@ const CardVideo = ({ info }) => {
         fontWeight:"bold",
       },
       body2:{
-        color:"black"
+        color:"black",
+        fontSize: "14"
       }
     }
   })
 
   return (
-    <Card style={styles.card} sx={{ maxWidth: 369}}>
-      <CardActionArea>
+    <Card style={styles.card} sx={{ maxWidth: 399}}>
+      <CardActionArea style={styles.cardAction}>
         <Link target="_blank" href={url}>
           <CardMedia
             style={styles.media}
             component="img"
-            height="207"
+            height="237"
             image={info.thumbnail}
             alt="thumbnail video"
           />

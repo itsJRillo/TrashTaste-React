@@ -2,7 +2,7 @@ import { styled } from "@mui/material";
 import {Switch} from "@mui/material";
 import * as React from "react";
 
-const Heading = () => {
+const Heading = ({setChecked, checked}) => {
   
   const handleChecked = (checked) => {
     setChecked({checked})
@@ -55,13 +55,15 @@ const Heading = () => {
     },
   }));
 
+  console.log(false)
+
   return (
     <div className="mt-10 mb-10 flex flex-row justify-center">
       <img alt="logo trash taste" src="./src/img/logo.jpg" />
       <h1 className="p-3 text-purple font-bold uppercase text-6xl">
         Trash Taste
       </h1>
-      <MaterialUISwitch sx={{ m: 2 }}/>
+      <MaterialUISwitch onChange={e => handleChecked(e.target.value)} sx={{ m: 2 }}/>
     </div>
   );
 };

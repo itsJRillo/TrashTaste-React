@@ -1,7 +1,10 @@
 import Heading from "./components/Heading";
 import ListadoCard from "./components/ListadoCard";
+import ListadoCardAF from "./components/ListadoCardAF";
+
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Footer from "./components/Footer";
 
 function App() {
   const [data, setData] = useState([]);
@@ -28,11 +31,13 @@ function App() {
         <div>
           <Heading setChecked={setChecked} checked={checked} />
           <ListadoCard data={data} />
+          <Footer/>
         </div>
       ) : (
         <div>
           <Heading setChecked={setChecked} checked={checked} />
           <ListadoCardAF data={dataAF} />
+          <Footer/>
         </div>
       )}
     </div>

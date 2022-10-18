@@ -6,7 +6,8 @@ module.exports = {
       "purple":"#541c83",
       "light-purple":"#eadae9",
       "dark-purple":"#3b135b",
-      "black":"#1d1d1d"
+      "black":"#1d1d1d",
+      "white":"#fff"
     },
     
     /* After Dark Palette
