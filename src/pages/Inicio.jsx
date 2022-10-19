@@ -30,8 +30,8 @@ const Inicio = () => {
         method:"get",
         url: url,
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        maxContentLength: 100000000,
-        maxBodyLength: 100000000,
+        maxContentLength: Infinity,
+        maxBodyLength: Infinity,
       });
       setData(res.data);
     };

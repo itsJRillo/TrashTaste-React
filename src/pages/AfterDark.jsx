@@ -28,8 +28,8 @@ const AfterDark = () => {
         method:"get",
         url: urlAF,
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        maxContentLength: 100000000,
-        maxBodyLength: 100000000,
+        maxContentLength: Infinity,
+        maxBodyLength: Infinity,
       });
       setDataAF(resAF.data);
     };
