@@ -71,7 +71,7 @@ const Heading = ({ c }) => {
   }));
 
   return c === false ? (
-    <div className="mt-10 mb-10 flex flex-row justify-center">
+    <div className="mt-10 p-10 mb-10 flex flex-row justify-center items-center gap-10">
       <img alt="logo trash taste" src="/logo.jpg" />
       <h1 className="p-3 text-purple font-bold uppercase text-6xl">
         Trash Taste <br/>
@@ -79,7 +79,7 @@ const Heading = ({ c }) => {
       <MaterialUISwitch checked={c} onChange={switchHandler} sx={{ m: 2 }} />
     </div>
   ) : (
-    <div className="mt-10 mb-10 flex flex-row justify-center ">
+    <div className="mt-10 mb-10 flex flex-row justify-center items-center gap-10">
       <img className="object-contain" alt="logo trash taste" src="/logoAF.jpg"/>
       <h1 className={`p-3 text-white font-bold uppercase text-6xl text-center ${styles.neonText}`}>
         Trash Taste <br/> <span className="text-5xl">After Dark</span> 
