@@ -2,7 +2,7 @@ import { styled } from "@mui/material";
 import { Switch } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import styles from "../neonLights.module.css"
 
 const Heading = ({ c }) => {
   const navigate = useNavigate();
@@ -11,13 +11,16 @@ const Heading = ({ c }) => {
   
   const switchHandler = (event) => {
     setChecked(event.target.checked);
-    
     if (!checked) {
       navigate("/after-dark");
       return;
     }
     navigate("/");
   };
+
+  const getChecked = () => {
+    return c;
+  }
 
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 89,
@@ -78,7 +81,7 @@ const Heading = ({ c }) => {
   ) : (
     <div className="mt-10 mb-10 flex flex-row justify-center ">
       <img className="object-contain" alt="logo trash taste" src="/logoAF.jpg"/>
-      <h1 className="p-3 text-purpleAF font-bold uppercase text-6xl text-center">
+      <h1 className={`p-3 text-white font-bold uppercase text-6xl text-center ${styles.neonText}`}>
         Trash Taste <br/> <span className="text-5xl">After Dark</span> 
       </h1>
       <MaterialUISwitch checked={c} onChange={switchHandler} sx={{ m: 2 }} />

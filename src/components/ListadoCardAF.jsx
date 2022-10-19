@@ -3,10 +3,10 @@ import CardVideoAF from "./CardVideoAF";
 
 const ListadoCardAF = ({ dataAF }) => {
   return (
-    <div className="mx-0 px-10">
+    <div className="m-0 w-50 p-10">
       <Grid container>
-      {dataAF?.map((d) => (
-          <CardVideoAF key={d.link} info={d} />
+        {dataAF?.map((d) => (
+          <CardVideoAF info={d} key={d.link} />
         ))}
       </Grid>
     </div>

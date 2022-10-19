@@ -1,13 +1,25 @@
-import {useState, useEffect} from "react";
-
+import { useState, useEffect } from "react";
 import axios from "axios";
-
 import Heading from "../components/Heading";
 import ListadoCardAF from "../components/ListadoCardAF";
 import Footer from "../components/Footer";
+import AnimatedPages from "../components/AnimatedPages";
+import { motion } from "framer-motion";
 
 const AfterDark = () => {
   const [dataAF, setDataAF] = useState([]);
+
+  const animation = {
+    initial:{
+      opacity: 0
+    },
+    animate:{
+      opacity: 1
+    },
+    exit:{
+      opacity: 0
+    }
+  }
 
   useEffect(() => {
     const getData = async () => {
@@ -16,17 +28,17 @@ const AfterDark = () => {
       setDataAF(resAF.data);
     };
 
-    console.log(dataAF)
-
     getData();
   }, []);
 
   return (
-    <div className="bg-dark">
-      <Heading c={true}/>
-      <ListadoCardAF data={dataAF} />
+    <motion.div variants={animation} initial="initial" animate="animate" exit="exit" className="bg-dark top-0 overflow-auto">
+      <Heading c={true} />
+      <AnimatedPages>
+        <ListadoCardAF dataAF={dataAF} />
+      </AnimatedPages>
       <Footer />
-    </div>
+    </motion.div>
   );
 };
 

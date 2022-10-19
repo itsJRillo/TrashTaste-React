@@ -13,10 +13,6 @@ module.exports = {
       "dark-purpleAF":"#251536",
       "dark":"#100d14"
     },
-    
-   
-      
-    
     fontFamily:{
       sans:[ 'Outfit', 'sans-serif']
     },
