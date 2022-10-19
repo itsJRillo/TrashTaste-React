@@ -8,7 +8,7 @@ import behance from "/behance.png";
 const Footer = () => {
 
   return (
-    <div className="bg-purple mt-10 p-20 flex flex-col items-center ">
+    <div className="bg-purple mt-10 p-20 flex flex-col items-center bottom-0">
 
       <div className="flex flex-row gap-10 mb-5">
         <Link href="https://github.com/itsJRillo">

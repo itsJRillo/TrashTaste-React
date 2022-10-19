@@ -1,15 +1,17 @@
-import { Grid } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 import CardVideo from "./CardVideo";
 
 const ListadoCard = ({ data }) => {
   return (
-    <div className="m-0 px-10">
-      <Grid container>
+    <Box className="flex items-center p-10">
+      <Grid container columns={{ xs: 2, sm: 4, md: 8, lg: 10}}>
         {data?.map((d) => (
-          <CardVideo key={d.link} info={d} />
+          <Grid minWidth={399} item xs={10} sm={2} md={2} lg={2} key={d.link}>
+            <CardVideo info={d} />
+          </Grid>
         ))}
       </Grid>
-    </div>
+    </Box>
   );
 };
 

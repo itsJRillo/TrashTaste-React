@@ -21,9 +21,6 @@ const CardVideo = ({ info }) => {
     card: {
       margin: "15px 15px 15px 15px",
       backgroundColor: "#fff",
-      "& :hover": {
-        transform: "scale(1.1)",
-      },
     },
     cardAction: {
       cursor: "default",
