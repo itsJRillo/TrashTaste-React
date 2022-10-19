@@ -23,8 +23,14 @@ const AfterDark = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const urlAF = "/trash-taste-afterdark.json";
-      const resAF = await axios.get(urlAF);
+      const urlAF = import.meta.env.VITE_API_AFTER;
+      const resAF = await axios({
+        method:"get",
+        url: urlAF,
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        maxContentLength: 100000000,
+        maxBodyLength: 100000000,
+      });
       setDataAF(resAF.data);
     };
 

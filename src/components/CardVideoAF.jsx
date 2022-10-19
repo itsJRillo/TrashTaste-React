@@ -39,7 +39,7 @@ const CardVideoAF = ({ info }) => {
       },
       body2: {
         color: "black",
-        fontSize: "14",
+        fontSize: "30",
       },
     },
   });

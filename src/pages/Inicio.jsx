@@ -25,8 +25,14 @@ const Inicio = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const url = "/trash-taste.json";
-      const res = await axios.get(url);
+      const url = import.meta.env.VITE_API_NORMAL;
+      const res = await axios({
+        method:"get",
+        url: url,
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        maxContentLength: 100000000,
+        maxBodyLength: 100000000,
+      });
       setData(res.data);
     };
 
