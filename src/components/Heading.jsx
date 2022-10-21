@@ -2,13 +2,13 @@ import { styled } from "@mui/material";
 import { Switch } from "@mui/material";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "../neonLights.module.css"
+import styles from "../neonLights.module.css";
 
 const Heading = ({ c }) => {
   const navigate = useNavigate();
 
   const [checked, setChecked] = useState(c);
-  
+
   const switchHandler = (event) => {
     setChecked(event.target.checked);
     if (!checked) {
@@ -20,11 +20,11 @@ const Heading = ({ c }) => {
 
   const getChecked = () => {
     return c;
-  }
+  };
 
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
-    width: 89,
-    height: 48,
+    width: 93,
+    height: 51,
     padding: 7,
     "& .MuiSwitch-switchBase": {
       margin: 1,
@@ -32,7 +32,7 @@ const Heading = ({ c }) => {
       transform: "translateX(4px)",
       "&.Mui-checked": {
         color: "#541c83",
-        transform: "translateX(38px)",
+        transform: "translateX(41px)",
         "& .MuiSwitch-thumb:before": {
           backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="25" width="25" viewBox="0 0 20 20"><path fill="${encodeURIComponent(
             "#fff"
@@ -71,18 +71,25 @@ const Heading = ({ c }) => {
   }));
 
   return c === false ? (
-    <div className="mt-10 p-10 mb-10 flex flex-row justify-center items-center gap-10">
+    <div className="mt-10 mb-3 flex flex-row justify-center items-center gap-10">
       <img alt="logo trash taste" src="/logo.jpg" />
-      <h1 className="p-3 text-purple font-bold uppercase text-6xl">
-        Trash Taste <br/>
+      <h1 className="p-3 text-purple font-bold uppercase text-3xl md:text-6xl transition-transitionDuration: 1 ">
+        Trash Taste <br />
       </h1>
-      <MaterialUISwitch checked={c} onChange={switchHandler} sx={{ m: 2 }} />
+      <MaterialUISwitch checked={c} onChange={switchHandler}/>
     </div>
   ) : (
-    <div className="mt-10 mb-10 flex flex-row justify-center items-center gap-10">
-      <img className="object-contain" alt="logo trash taste" src="/logoAF.jpg"/>
-      <h1 className={`p-3 text-white font-bold uppercase text-6xl text-center ${styles.neonText}`}>
-        Trash Taste <br/> <span className="text-5xl">After Dark</span> 
+    <div className="mt-10 mb-3 flex flex-row justify-center items-center gap-10">
+      <img
+        className="object-contain"
+        alt="logo trash taste"
+        src="/logoAF.jpg"
+      />
+
+      <h1
+        className={`p text-white font-bold uppercase text-3xl md:text-6xl text-center ${styles.neonText}`}
+      >
+        Trash Taste <br/> After Dark
       </h1>
       <MaterialUISwitch checked={c} onChange={switchHandler} sx={{ m: 2 }} />
     </div>

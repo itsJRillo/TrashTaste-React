@@ -2,7 +2,7 @@ import React from "react";
 
 const SpotifyEmbed = () => {
   return (
-    <div className="flex items-center justify-center p-10">
+    <div className="flex h-fit items-center justify-center p-10">
       <iframe
         as="true"
         className="border-radius:12px"

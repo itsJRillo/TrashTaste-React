@@ -10,24 +10,27 @@ const AfterDark = () => {
   const [dataAF, setDataAF] = useState([]);
 
   const animation = {
-    initial:{
-      opacity: 0
+    initial: {
+      opacity: 0,
     },
-    animate:{
-      opacity: 1
+    animate: {
+      opacity: 1,
     },
-    exit:{
-      opacity: 0
-    }
-  }
+    exit: {
+      opacity: 0,
+    },
+  };
 
   useEffect(() => {
     const getData = async () => {
       const urlAF = import.meta.env.VITE_API_AFTER;
       const resAF = await axios({
-        method:"get",
+        method: "get",
         url: urlAF,
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
         maxContentLength: Infinity,
         maxBodyLength: Infinity,
       });
@@ -38,7 +41,14 @@ const AfterDark = () => {
   }, []);
 
   return (
-    <motion.div variants={animation} initial="initial" animate="animate" exit="exit" className="bg-dark top-0 overflow-auto">
+    <motion.div
+      variants={animation}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      transition={{ duration: 1 }}
+      className="bg-dark top-0 overflow-auto"
+    >
       <Heading c={true} />
       <AnimatedPages>
         <ListadoCardAF dataAF={dataAF} />

@@ -1,17 +1,15 @@
-import { Grid, Box} from "@mui/material";
 import CardVideoAF from "./CardVideoAF";
+import styles from "../grid.module.css"
 
 const ListadoCardAF = ({ dataAF }) => {
   return (
-    <Box className="flex items-center p-10">
-      <Grid container columns={{ xs: 2, sm: 4, md: 8, lg: 10}}>
+    <div className="flex justify-center items-center p-10">
+      <div className={`${styles.grid}`}>
         {dataAF?.map((d) => (
-          <Grid minWidth={399} item xs={10} sm={2} md={2} lg={2} key={d.link}>
-            <CardVideoAF info={d} />
-          </Grid>
+            <CardVideoAF key={d.link} info={d} />
         ))}
-      </Grid>
-    </Box>
+      </div>
+    </div>
   );
 };
 

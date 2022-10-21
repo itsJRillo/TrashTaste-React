@@ -45,6 +45,7 @@ const Inicio = () => {
       initial="initial"
       animate="animate"
       exit="exit"
+      transition={{duration: 1}}
     >
       <Heading c={false} />
       <AnimatedPages>
