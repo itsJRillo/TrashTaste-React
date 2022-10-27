@@ -15,8 +15,6 @@ const CardVideo = ({ info }) => {
   const url = "https://www.youtube.com/watch?v=" + info.id.videoId;
   const date = formatearFecha(info.snippet.publishedAt);
 
-  console.log(url)
-
   const styles = {
     media: {
       width: 399,
@@ -33,13 +31,13 @@ const CardVideo = ({ info }) => {
 
   const theme = createTheme({
     typography: {
-      h5: {
+      h4: {
         color: "#3b135b",
         fontWeight: "bold",
       },
       body2: {
-        color: "black",
-        fontSize: "14",
+        color: "#303030",
+        fontSize: "30",
       },
     },
   });
@@ -59,11 +57,11 @@ const CardVideo = ({ info }) => {
           </Link>
           <CardContent>
             <ThemeProvider theme={theme}>
-              <Typography gutterBottom={true} variant="h5">
+              <Typography gutterBottom={true} variant="h4">
                 {info.snippet.title}
               </Typography>
-              <Typography variant="body2" color="">
-                <span className="block text-xs text-purple font-bold">
+              <Typography variant="body2" className="text-xl">
+                <span className="block text-xl text-purple font-bold">
                   Publicado el:
                 </span>
                 {date}
