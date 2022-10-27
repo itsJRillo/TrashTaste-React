@@ -9,9 +9,13 @@ import {
   ThemeProvider,
 } from "@mui/material";
 import { motion } from "framer-motion";
+import { formatearFecha } from "../helpers/index";
 
 const CardVideo = ({ info }) => {
-  const url = "https://www.youtube.com" + info.link;
+  const url = "https://www.youtube.com/watch?v=" + info.id.videoId;
+  const date = formatearFecha(info.snippet.publishedAt);
+
+  console.log(url)
 
   const styles = {
     media: {
@@ -41,9 +45,7 @@ const CardVideo = ({ info }) => {
   });
 
   return (
-    <motion.div
-      whileHover={{ scale: 0.95 }}
-    >
+    <motion.div whileHover={{ scale: 0.95 }}>
       <Card style={styles.card} sx={{ maxWidth: 399 }}>
         <CardActionArea style={styles.cardAction}>
           <Link target="_blank" href={url}>
@@ -51,17 +53,20 @@ const CardVideo = ({ info }) => {
               style={styles.media}
               component="img"
               height="237"
-              image={info.thumbnail}
+              image={info.snippet.thumbnails.high.url}
               alt="thumbnail video"
             />
           </Link>
           <CardContent>
             <ThemeProvider theme={theme}>
               <Typography gutterBottom={true} variant="h5">
-                {info.title}
+                {info.snippet.title}
               </Typography>
               <Typography variant="body2" color="">
-                {info.visuals}
+                <span className="block text-xs text-purple font-bold">
+                  Publicado el:
+                </span>
+                {date}
               </Typography>
             </ThemeProvider>
           </CardContent>

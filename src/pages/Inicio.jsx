@@ -1,41 +1,26 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
-import axios from "axios";
 import Heading from "../components/Heading";
 import ListadoCard from "../components/ListadoCard";
 import Footer from "../components/Footer";
 import AnimatedPages from "../components/AnimatedPages";
-import { motion } from "framer-motion";
 import SpotifyEmbed from "../components/SpotifyEmbed";
+import youtubeAPI from "../api/youtube";
+import { animation } from "../helpers/";
 
 const Inicio = () => {
   const [data, setData] = useState([]);
 
-  const animation = {
-    initial: {
-      opacity: 0,
-    },
-    animate: {
-      opacity: 1,
-    },
-    exit: {
-      opacity: 0,
-    },
-  };
-
   useEffect(() => {
     const getData = async () => {
-      const url = import.meta.env.VITE_API_NORMAL;
-      const res = await axios({
-        method:"get",
-        url: url,
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        maxContentLength: Infinity,
-        maxBodyLength: Infinity,
+      const res = await youtubeAPI.get("/search", {
+        params: {
+          q: "Trash Taste",
+        },
       });
-      setData(res.data);
+      setData(res.data.items);
     };
-
     getData();
   }, []);
 
@@ -45,13 +30,13 @@ const Inicio = () => {
       initial="initial"
       animate="animate"
       exit="exit"
-      transition={{duration: 1}}
+      transition={{ duration: 1 }}
     >
       <Heading c={false} />
       <AnimatedPages>
         <ListadoCard data={data} />
       </AnimatedPages>
-      <SpotifyEmbed/>
+      <SpotifyEmbed />
       <Footer />
     </motion.div>
   );

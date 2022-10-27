@@ -5,6 +5,7 @@ import ListadoCardAF from "../components/ListadoCardAF";
 import Footer from "../components/Footer";
 import AnimatedPages from "../components/AnimatedPages";
 import { motion } from "framer-motion";
+import youtubeAPI from "../api/youtube";
 
 const AfterDark = () => {
   const [dataAF, setDataAF] = useState([]);
@@ -23,20 +24,13 @@ const AfterDark = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const urlAF = import.meta.env.VITE_API_AFTER;
-      const resAF = await axios({
-        method: "get",
-        url: urlAF,
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
+      const res = await youtubeAPI.get("/search", {
+        params: {
+          q: "Trash Taste AfterDark",
         },
-        maxContentLength: Infinity,
-        maxBodyLength: Infinity,
       });
-      setDataAF(resAF.data);
+      setDataAF(res.data.items);
     };
-
     getData();
   }, []);
 
