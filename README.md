@@ -76,7 +76,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [product-screenshot1]: https://snipboard.io/8r15ie.jpg
 [product-screenshot2]: https://snipboard.io/e4f7pd.jpg
 
-[product-screenshot-afterdark]: https://snipboard.io/vtUXn8.jpgA
+[product-screenshot-afterdark]: https://snipboard.io/vtUXn8.jpg
 
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
