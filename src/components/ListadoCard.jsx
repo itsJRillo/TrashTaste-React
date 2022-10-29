@@ -2,8 +2,6 @@ import CardVideo from "./CardVideo";
 import styles from "../styles/grid.module.css";
 
 const ListadoCard = ({ data }) => {
-  data.shift();
-
   return (
     <div className="flex justify-center items-center p-10">
       <div className={`${styles.grid}`}>

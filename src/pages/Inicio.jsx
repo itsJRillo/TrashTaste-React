@@ -24,6 +24,8 @@ const Inicio = () => {
     };
     getData();
   }, []);
+  
+  data.shift()
 
   return (
     <motion.div

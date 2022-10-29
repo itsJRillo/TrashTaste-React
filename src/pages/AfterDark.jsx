@@ -35,6 +35,8 @@ const AfterDark = () => {
     getData();
   }, []);
 
+  dataAF.shift()
+
   return (
     <motion.div
       variants={animation}
