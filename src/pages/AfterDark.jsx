@@ -26,6 +26,7 @@ const AfterDark = () => {
     const getData = async () => {
       const res = await youtubeAPI.get("/search", {
         params: {
+          channelId:"UCKaN3mt53ATqRjzalb2ALFQ",
           q: "Trash Taste AfterDark",
         },
       });

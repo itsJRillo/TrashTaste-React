@@ -16,6 +16,7 @@ const Inicio = () => {
     const getData = async () => {
       const res = await youtubeAPI.get("/search", {
         params: {
+          channelId: "UCcmxOGYGF51T1XsqQLewGtQ",
           q: "Trash Taste",
         },
       });
