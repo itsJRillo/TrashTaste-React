@@ -5,13 +5,14 @@ import Typography from "@mui/material/Typography";
 import {
   CardActionArea,
   createTheme,
-  Link,
   ThemeProvider,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import { formatearFecha } from "../helpers/index";
+import useDisplay from "../hooks/useDisplay";
 
 const CardVideo = ({ info }) => {
+  const {setURLDisplay} = useDisplay();
   const url = "https://www.youtube.com/watch?v=" + info.id.videoId;
   const date = formatearFecha(info.snippet.publishedAt);
 
@@ -43,10 +44,9 @@ const CardVideo = ({ info }) => {
   });
 
   return (
-    <motion.div whileHover={{ scale: 0.95 }}>
+    <motion.div whileHover={{ scale: 0.95 }} onClick={() => setURLDisplay(url)}>
       <Card style={styles.card} sx={{ maxWidth: 399 }}>
         <CardActionArea style={styles.cardAction}>
-          <Link target="_blank" href={url}>
             <CardMedia
               style={styles.media}
               component="img"
@@ -54,7 +54,6 @@ const CardVideo = ({ info }) => {
               image={info.snippet.thumbnails.high.url}
               alt="thumbnail video"
             />
-          </Link>
           <CardContent>
             <ThemeProvider theme={theme}>
               <Typography gutterBottom={true} variant="h4">

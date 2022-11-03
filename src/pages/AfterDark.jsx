@@ -6,9 +6,12 @@ import Footer from "../components/Footer";
 import AnimatedPages from "../components/AnimatedPages";
 import { motion } from "framer-motion";
 import youtubeAPI from "../api/youtube";
+import Reproductor from "../components/Reproductor";
+import useDisplay from "../hooks/useDisplay";
 
 const AfterDark = () => {
   const [dataAF, setDataAF] = useState([]);
+  const {urlDisplay} = useDisplay();
 
   const animation = {
     initial: {
@@ -26,7 +29,7 @@ const AfterDark = () => {
     const getData = async () => {
       const res = await youtubeAPI.get("/search", {
         params: {
-          channelId:"UCKaN3mt53ATqRjzalb2ALFQ",
+          channelId: "UCKaN3mt53ATqRjzalb2ALFQ",
           q: "Trash Taste AfterDark",
         },
       });
@@ -35,7 +38,7 @@ const AfterDark = () => {
     getData();
   }, []);
 
-  dataAF.shift()
+  dataAF.shift();
 
   return (
     <motion.div
@@ -48,6 +51,7 @@ const AfterDark = () => {
     >
       <Heading c={true} />
       <AnimatedPages>
+        {urlDisplay === "" ? null:  (<Reproductor/>)}
         <ListadoCardAF dataAF={dataAF} />
       </AnimatedPages>
       <Footer />

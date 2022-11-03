@@ -3,14 +3,17 @@ import { motion } from "framer-motion";
 
 import Heading from "../components/Heading";
 import ListadoCard from "../components/ListadoCard";
+import Reproductor from "../components/Reproductor";
 import Footer from "../components/Footer";
 import AnimatedPages from "../components/AnimatedPages";
 import SpotifyEmbed from "../components/SpotifyEmbed";
 import youtubeAPI from "../api/youtube";
 import { animation } from "../helpers/";
+import useDisplay from "../hooks/useDisplay";
 
 const Inicio = () => {
   const [data, setData] = useState([]);
+  const {urlDisplay} = useDisplay();
 
   useEffect(() => {
     const getData = async () => {
@@ -37,6 +40,7 @@ const Inicio = () => {
     >
       <Heading c={false} />
       <AnimatedPages>
+        {urlDisplay === "" ? null:  (<Reproductor/>)}
         <ListadoCard data={data} />
       </AnimatedPages>
       <SpotifyEmbed />

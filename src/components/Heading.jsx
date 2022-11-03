@@ -2,18 +2,22 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../styles/neonLights.module.css";
 import { MaterialUISwitch } from "../helpers";
+import useDisplay from "../hooks/useDisplay";
 
 const Heading = ({ c }) => {
   const navigate = useNavigate();
+  const {setURLDisplay} = useDisplay();
 
   const [checked, setChecked] = useState(c);
 
   const switchHandler = (event) => {
     setChecked(event.target.checked);
     if (!checked) {
+      setURLDisplay("");
       navigate("/after-dark");
       return;
     }
+    setURLDisplay("");
     navigate("/");
   };
   
