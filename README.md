@@ -26,7 +26,7 @@ In this section are the frameworks/libraries I used to bootstrap my project.
 
 In order to interact with the project it is not necessary to clone the project on your computer, just click on this link and you will be redirected to the web page.
 
-Web Page Deployment: [Trash Taste Website](https://itsjrillo-trashtaste.netlify.app)
+Web Page Deployment: [Trash Taste Website](https://trash-taste-podcast.netlify.app)
 
 
 
