@@ -4,8 +4,8 @@ This page is a kind of compilation of the episodes of the anime podcast Trash Ta
 
 There is still a lot I want to implement but for now this is the first version of the page.
 
-[![Trash Taste Website][product-screenshot]](https://itsjrillo-trashtaste.netlify.app)
-[![Trash Taste Website][product-screenshot-afterdark]](https://itsjrillo-trashtaste.netlify.app/after-dark)
+![Trash Taste Website][product-screenshot]
+![Trash Taste Website][product-screenshot-afterdark]
 
 
 
@@ -35,8 +35,8 @@ Web Page Deployment: [Trash Taste Website](https://itsjrillo-trashtaste.netlify.
 
 - [x] Make the deployment
 - [x] Add Second Podcast 
-- [ ] Add a Video Reproductor within the page
-- [ ] Consume YouTube's external API
+- [x] Add a Video Reproductor within the page
+- [x] Consume YouTube's external API
 
 
 
@@ -83,8 +83,8 @@ Use this space to list resources you find helpful and would like to give credit 
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: https://snipboard.io/MYJGmN.jpg
-[product-screenshot-afterdark]: https://snipboard.io/T0VYsk.jpg
+[product-screenshot]: https://snipboard.io/G2ujJs.jpg
+[product-screenshot-afterdark]: https://snipboard.io/vP9STH.jpg
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
